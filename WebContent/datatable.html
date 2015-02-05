@@ -8,9 +8,7 @@
 <body>
 	<div>
 		<table id="grid"
-			class="table table-condensed table-hover table-striped"
-			data-selection="true" data-multi-select="true" data-row-select="true"
-			data-keep-selection="true" data-ajax="true" data-toggle="bootgrid">
+			class="table table-condensed table-hover table-striped">
 			<thead>
 				<tr>
 					<th data-column-id="id" data-identifier="true" data-type="numeric"
@@ -96,5 +94,23 @@
 	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery.bootgrid.js"></script>
+	<script type="text/javascript">
+		$("#grid").bootgrid({
+			selection: true,
+		    multiSelect: true
+		}).on("selected.rs.jquery.bootgrid", function(e, rows){
+			var rowIds = [];
+			for (var i = 0; i < rows.length; i++) {
+				rowIds.push(rows[i].id);	
+			}
+			// Pass selected rowIds from bootgrid widget to another javascript function
+			print(rowIds);
+		});
+		
+		function print(rowIds) {
+			console.log("Printing selected row ID(s): " + rowIds.join("-"));
+		}
+		
+	</script>
 </body>
 </html>
