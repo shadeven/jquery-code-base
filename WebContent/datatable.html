@@ -27,7 +27,9 @@
 						data-header-align="center">Sender</th>
 					<th data-column-id="received" data-css-class="cell"
 						data-header-css-class="column" data-filterable="true">Received</th>
-					<th data-column-id="link" data-formatter="commands"
+					<th data-column-id="link" data-formatter="link"
+						data-sortable="false">Link</th>
+					<th data-column-id="commands" data-formatter="commands"
 						data-sortable="false">Commands</th>
 				</tr>
 			</thead>
@@ -98,36 +100,66 @@
 					<td>12.12.2014</td>
 					<td>Link</td>
 				</tr>
+				<tr>
+					<td>12</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>mo@rafaelstaib.com</td>
+					<td>12.12.2014</td>
+					<td>Link</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
 	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery.bootgrid.js"></script>
-	<script type="text/javascript">
-		$("#grid").bootgrid({
-			selection : true,
-			multiSelect : true
-		}).on("selected.rs.jquery.bootgrid", function(e, rows) {
-			var rowIds = [];
-			for (var i = 0; i < rows.length; i++) {
-				rowIds.push(rows[i].id);
-			}
-			// Pass selected rowIds from bootgrid widget to another javascript function
-			print(rowIds);
-		});
-
-		function print(rowIds) {
-			console.log("Printing selected row ID(s): " + rowIds.join(","));
-		}
-	</script>
-	<script type="text/javascript">
-		$(function() {
-			$("#drop-down").change(function() {
-				var selected = $("#drop-down").val();
-				console.log("selected item in drop-down: " + selected);
-			});
-		});
-	</script>
+	<script type="text/javascript" src="js/datatable.js"></script>
 </body>
 </html>
