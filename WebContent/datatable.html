@@ -6,7 +6,17 @@
 <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
-	<div>
+	<form action="" method="POST">
+		<div id="drop-down-div">
+			<select name="drop-down-name" id="drop-down">
+				<option value="Milk" selected="selected">Fresh Milk</option>
+				<option value="Cheese">Old Cheese</option>
+				<option value="Bread">Hot Bread</option>
+			</select>
+		</div>
+	</form>
+	<br />
+	<div id="grid-div">
 		<table id="grid"
 			class="table table-condensed table-hover table-striped">
 			<thead>
@@ -17,8 +27,8 @@
 						data-header-align="center">Sender</th>
 					<th data-column-id="received" data-css-class="cell"
 						data-header-css-class="column" data-filterable="true">Received</th>
-					<th data-column-id="link" data-formatter="link"
-						data-sortable="false">Link</th>
+					<th data-column-id="link" data-formatter="commands"
+						data-sortable="false">Commands</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -96,21 +106,28 @@
 	<script type="text/javascript" src="js/jquery.bootgrid.js"></script>
 	<script type="text/javascript">
 		$("#grid").bootgrid({
-			selection: true,
-		    multiSelect: true
-		}).on("selected.rs.jquery.bootgrid", function(e, rows){
+			selection : true,
+			multiSelect : true
+		}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 			var rowIds = [];
 			for (var i = 0; i < rows.length; i++) {
-				rowIds.push(rows[i].id);	
+				rowIds.push(rows[i].id);
 			}
 			// Pass selected rowIds from bootgrid widget to another javascript function
 			print(rowIds);
 		});
-		
+
 		function print(rowIds) {
-			console.log("Printing selected row ID(s): " + rowIds.join("-"));
+			console.log("Printing selected row ID(s): " + rowIds.join(","));
 		}
-		
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			$("#drop-down").change(function() {
+				var selected = $("#drop-down").val();
+				console.log("selected item in drop-down: " + selected);
+			});
+		});
 	</script>
 </body>
 </html>
