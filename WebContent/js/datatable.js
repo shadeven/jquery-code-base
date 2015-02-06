@@ -10,6 +10,10 @@ $("#grid").bootgrid({
 	formatters: {
 		"link": function(column, row) {
 			return "<a href=\"www.google.com.au\">Google" + "</a>";
+		},
+		
+		"name": function(column, row) {
+		return "<a href=\"www.google.com.au\">Google" + "</a>";
 		}
 	}
 }).on("selected.rs.jquery.bootgrid", function(e, rows) {
