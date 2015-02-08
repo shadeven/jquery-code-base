@@ -13,7 +13,8 @@ $("#grid").bootgrid({
 		},
 		
 		"name": function(column, row) {
-		return "<a href=\"www.google.com.au\">Google" + "</a>";
+			var cellValue = row[column.id];
+			return "<a href=\"www.google.com.au\">" + cellValue + "</a>";
 		}
 	}
 }).on("selected.rs.jquery.bootgrid", function(e, rows) {
