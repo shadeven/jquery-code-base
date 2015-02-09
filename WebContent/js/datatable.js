@@ -3,6 +3,9 @@
  *	The javascript serves for datatable html page. 
  */
 
+// Global variable
+var rowIds = [];
+
 // Bootgrid widget
 $("#grid").bootgrid({
 	selection : true,
@@ -18,13 +21,16 @@ $("#grid").bootgrid({
 		}
 	}
 }).on("selected.rs.jquery.bootgrid", function(e, rows) {
-	var rowIds = [];
 	for (var i = 0; i < rows.length; i++) {
 		rowIds.push(rows[i].id);
 	}
 	// Pass selected rowIds from bootgrid widget to another javascript
 	// function
 	print(rowIds);
+}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
+	for (var i = 0; i < rows.length; i++) {
+		rowIds.splice($.inArray(rows[i].id, rowIds), 1);
+	}
 });
 
 function print(rowIds) {
