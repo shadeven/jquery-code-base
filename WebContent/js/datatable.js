@@ -10,6 +10,7 @@ var rowIds = [];
 var grid = $("#grid").bootgrid({
 	selection : true,
 	multiSelect : true,
+	
 	formatters: {
 		"link": function(column, row) {
 			return "<a href=\"www.google.com.au\">Google" + "</a>";
@@ -45,16 +46,6 @@ function print(rowIds) {
 	console.log("Printing selected row ID(s): " + rowIds.join(","));
 }
 
-$("#modal-dialog").dialog({	
-	    modal: true,
-	    draggable: false,
-	    resizable: false,
-	    position: ['center', 'top'],
-	    show: 'blind',
-	    hide: 'blind',
-	    width: 400
-});	
-
 $("#drop-down").change(function() {
 		var selected = $("#drop-down").val();
 		console.log("selected item in drop-down: " + selected);
@@ -65,3 +56,10 @@ function getCellValue(column, row) {
 	var row = $("#" + row);
 	return row.find("td").eq(columnIndex);
 }
+
+function getColor(value) {
+	if (value == 8) {
+		return "red";
+	}
+}
+

@@ -4,6 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>jQuery Bootgrid</title>
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/datatable.css" rel="stylesheet">
 </head>
 <body>
 	<form action="" method="POST">
@@ -12,8 +13,7 @@
 				<option value="Milk" selected="selected">Fresh Milk</option>
 				<option value="Cheese">Old Cheese</option>
 				<option value="Bread">Hot Bread</option>
-			</select>
-			<input type="submit" value="Submit">
+			</select> <input type="submit" value="Submit">
 		</div>
 	</form>
 	<br />
@@ -23,7 +23,7 @@
 			<thead>
 				<tr>
 					<th data-column-id="id" data-identifier="true" data-type="numeric"
-						data-align="right">ID</th>
+						data-css-class="custom-column" data-align="right" data-order="asc">ID</th>
 					<th data-column-id="sender" data-order="asc" data-align="center"
 						data-header-align="center">Sender</th>
 					<th data-column-id="received" data-css-class="cell"
@@ -180,11 +180,9 @@
 			</tbody>
 		</table>
 	</div>
-	
-	<div id="modal-dialog">
+	<div id="modal-dialog" style="display: none">
 		<p>This is the first dialog</p>
 	</div>
-	
 	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery.bootgrid.js"></script>
