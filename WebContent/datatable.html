@@ -3,6 +3,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>jQuery Bootgrid</title>
+<link href="css/jquery-ui.min.css" rel="stylesheet">
+<link href="css/jquery-ui.theme.min.css" rel="stylesheet">
+<link href="css/jquery-ui.structure.min.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/datatable.css" rel="stylesheet">
 </head>
@@ -181,9 +184,15 @@
 		</table>
 	</div>
 	<div id="modal-dialog" style="display: none">
-		<p>This is the first dialog</p>
+		<form action="" method="post">
+			<label>Notes</label> <input id="notes" name="notes" type="text">
+			<input id="submit" type="submit" value="Submit">
+		</form>
 	</div>
+	
+	<input id="button" type="button" value="Open Dialog Form">
 	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery.bootgrid.js"></script>
 	<script type="text/javascript" src="js/datatable.js"></script>

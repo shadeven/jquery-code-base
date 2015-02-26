@@ -47,8 +47,22 @@ function print(rowIds) {
 }
 
 $("#drop-down").change(function() {
-		var selected = $("#drop-down").val();
-		console.log("selected item in drop-down: " + selected);
+	var selected = $("#drop-down").val();
+	console.log("selected item in drop-down: " + selected);
+});
+
+$(function() {
+	$("#modal-dialog").dialog({
+		autoOpen: false
+	});
+	
+	$("#button").on("click", function() {
+		$("#modal-dialog").dialog("open");
+	});
+	
+	$("#submit").click(function() {
+		console.log("Submitting the form...");
+	});
 });
 
 function getCellValue(column, row) {
@@ -62,4 +76,3 @@ function getColor(value) {
 		return "red";
 	}
 }
-
